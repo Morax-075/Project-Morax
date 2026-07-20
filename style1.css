@@ -34,18 +34,34 @@ background: rgba(255,255,255,.08);
 }
 
 #profilePic{
-    width:55px;
-    height:55px;
+    left:20px;
+    width:56px;
+    
+    height:56px;
+
     border-radius:50%;
-    cursor:pointer;
+
     object-fit:cover;
-    border:2px solid white;
+
+    cursor:pointer;
+
+    border:2px solid rgba(255,255,255,.25);
+
+    transition:.3s;
+
+}
+
+#profilePic:hover{
+
+    transform:scale(1.08);
+
+    border-color:#2b7cff;
+
 }
 .profile-panel{
     position:fixed;
     top:0;
     right: -350px;
-
     width:320px;
     height:100vh;
 
@@ -115,19 +131,27 @@ background: rgba(255,255,255,.08);
 
 .notification-panel{
 
-    left:70px;          /* Sidebar width */
+    position:fixed;
+
+    top:0;
+
+    left:-380px;
 
     width:360px;
 
-    transform:translateX(-120%);
+    height:100vh;
 
-    transition:.35s ease;
+    background:#151515;
+
+    transition:.35s;
+
+    z-index:2500;
 
 }
 
 .notification-panel.active{
 
-    transform:translateX(0);
+    left:0;
 
 }
 
@@ -224,66 +248,25 @@ background: rgba(255,255,255,.08);
     font-size:12px;
 
 }
- #notificationBtn{
-
-    width:100%;
-
-    margin-top:20px;
-
-    padding:12px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#2b7cff;
-
-    color:white;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-#notificationBtn:hover{
-
-    background:#1f63d8;
-
-}
-.sidebar{
+.floating-actions{
 
     position:fixed;
 
-    top:0;
+    top:95px;
 
-    left:0;
-
-    width:70px;
-
-    height:100vh;
-
-    background:#151515;
+    left:10px;
 
     display:flex;
 
     flex-direction:column;
 
-    align-items:center;
+    gap:15px;
 
-    padding-top:90px;
-
-    gap:18px;
-
-    border-right:1px solid #2b2b2b;
-
-    z-index:3000;
+    z-index:1500;
 
 }
 
-.nav-btn{
+.floating-btn{
 
     width:56px;
 
@@ -291,31 +274,61 @@ background: rgba(255,255,255,.08);
 
     border:none;
 
-    border-radius:14px;
+    border-radius:50%;
 
-    background:#232323;
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
 
     color:white;
 
+    font-size:24px;
+
     cursor:pointer;
 
-    font-size:22px;
+    border:1px solid rgba(255,255,255,.15);
 
     transition:.3s;
 
-}
-
-.nav-btn:hover{
-
-    background:#2f7cff;
-
-    transform:scale(1.05);
+    position:relative;
 
 }
 
-.nav-btn.active{
+.floating-btn:hover{
 
-    background:#2f7cff;
+    transform:scale(1.08);
+
+    background:#2b7cff;
+
+}
+
+#notificationBadge{
+
+    position:absolute;
+
+    top:-5px;
+
+    right:-5px;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:#ff3b30;
+
+    color:white;
+
+    font-size:11px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
 
 }
 .chat-messages{
