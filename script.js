@@ -62,7 +62,7 @@ recognition.interimResults = false;
     }
 
     else{
-      window.location.href = "login1.html";
+      window.location.href = "login.html";
     }
 
   }
